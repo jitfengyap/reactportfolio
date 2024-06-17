@@ -2,30 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./About.scss";
 import { motion } from "framer-motion";
 import { urlFor, client } from "../../client";
-import { AppWrap } from "../../wrapper";
-
-// const abouts = [
-//   {
-//     title: "Web Development",
-//     description: "I am a web developer",
-//     imgURL: images.about01,
-//   },
-//   {
-//     title: "Frontend Development",
-//     description: "I am a web developer",
-//     imgURL: images.about02,
-//   },
-//   {
-//     title: "Backend Development",
-//     description: "I am a web developer",
-//     imgURL: images.about03,
-//   },
-//   {
-//     title: "MERN Stack",
-//     description: "I am a web developer",
-//     imgURL: images.about04,
-//   },
-// ];
+import { AppWrap, MotionWrap } from "../../wrapper";
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -69,4 +46,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "about",
+  "app__whitebg"
+);
